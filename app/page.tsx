@@ -1,32 +1,10 @@
-import { Link } from "@nextui-org/link";
-import { Snippet } from "@nextui-org/snippet";
-import { Code } from "@nextui-org/code";
-import { redirect } from "next/navigation";
-import {
-  Card,
-  CardHeader,
-  CardBody,
-  CardFooter,
-  Image,
-  Button,
-} from "@nextui-org/react";
-import { button as buttonStyles } from "@nextui-org/theme";
-import { siteConfig } from "@/config/site";
-import { title, subtitle } from "@/components/primitives";
-import { GithubIcon } from "@/components/icons";
+import { title } from "@/components/primitives";
 import { getSortedPostsData } from "@/lib/posts";
 import { PostCard } from "@/components/post-card";
 
-export function getPosts() {
-  const allPostsData = getSortedPostsData();
-  return { allPostsData };
-}
-
 export default function Home() {
-  const { allPostsData } = getPosts();
-  const postsToDisplay = allPostsData
-    .sort((a, b) => a.date - b.date)
-    .slice(0, 3);
+  const allPostsData = getSortedPostsData();
+  const postsToDisplay = allPostsData.slice(0, 3);
 
   return (
     <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
@@ -40,7 +18,7 @@ export default function Home() {
         }}
       >
         {postsToDisplay.map((post) => {
-          return <PostCard post={post} />;
+          return <PostCard key={post.id} post={post} />;
         })}
       </div>
     </section>

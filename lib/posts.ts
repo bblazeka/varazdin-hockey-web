@@ -3,6 +3,7 @@ import path from "path";
 import matter from "gray-matter";
 import { remark } from "remark";
 import html from "remark-html";
+import { TPostData } from "./types";
 
 const postsDirectory = path.join(process.cwd(), "posts");
 console.log("🚀 ~ file: posts.ts:6 ~ postsDirectory:", postsDirectory);
@@ -10,10 +11,6 @@ console.log("🚀 ~ file: posts.ts:6 ~ postsDirectory:", postsDirectory);
 export function getSortedPostsData() {
   // Get file names under /posts
   const fileNames = fs.readdirSync(postsDirectory);
-  console.log(
-    "🚀 ~ file: posts.ts:13 ~ getSortedPostsData ~ fileNames:",
-    fileNames
-  );
   const allPostsData = fileNames.map((fileName) => {
     // Remove ".md" from file name to get id
     const id = fileName.replace(/\.md$/, "");
@@ -29,7 +26,7 @@ export function getSortedPostsData() {
     return {
       id,
       ...matterResult.data,
-    } as any;
+    } as TPostData;
   });
   // Sort posts by date
   return allPostsData.sort((a, b) => {
