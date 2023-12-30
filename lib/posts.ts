@@ -10,6 +10,10 @@ console.log("🚀 ~ file: posts.ts:6 ~ postsDirectory:", postsDirectory);
 export function getSortedPostsData() {
   // Get file names under /posts
   const fileNames = fs.readdirSync(postsDirectory);
+  console.log(
+    "🚀 ~ file: posts.ts:13 ~ getSortedPostsData ~ fileNames:",
+    fileNames
+  );
   const allPostsData = fileNames.map((fileName) => {
     // Remove ".md" from file name to get id
     const id = fileName.replace(/\.md$/, "");
@@ -43,16 +47,10 @@ export const getPostData = async (id2: string) => {
   const allPostsData = fileNames.forEach((fileName) => {
     // Remove ".md" from file name to get id
     const id = fileName.replace(/\.md$/, "");
-    console.log("🚀 ~ file: posts.ts:43 ~ allPostsData ~ id:", id);
-    console.log("🚀 ~ file: posts.ts:50 ~ allPostsData ~ id2:", id2);
 
     // Read markdown file as string
     const fullPath = path.join(postsDirectory, fileName);
     const fileContents = fs.readFileSync(fullPath, "utf8");
-    console.log(
-      "🚀 ~ file: posts.ts:49 ~ allPostsData ~ fileContents:",
-      fileContents
-    );
 
     if (id === id2) {
       fileContentt = fileContents;
