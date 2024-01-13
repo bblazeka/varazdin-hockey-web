@@ -8,16 +8,15 @@ import {
   NavbarMenuItem,
 } from "@nextui-org/navbar";
 import { Button } from "@nextui-org/button";
-import { Kbd } from "@nextui-org/kbd";
 import { Link } from "@nextui-org/link";
-import { Input } from "@nextui-org/input";
 
 import { link as linkStyles } from "@nextui-org/theme";
 
 import { siteConfig } from "@/config/site";
+import strings from "@/utils/strings";
 import NextLink from "next/link";
 import clsx from "clsx";
-import { FaFacebook, FaInstagramSquare, FaHockeyPuck } from "react-icons/fa";
+import { FaFacebook, FaInstagramSquare, FaFire } from "react-icons/fa";
 
 import { ThemeSwitch } from "@/components/theme-switch";
 import { Avatar } from "@nextui-org/react";
@@ -54,6 +53,14 @@ export const Navbar = () => {
         className="hidden sm:flex basis-1/5 sm:basis-full"
         justify="end"
       >
+        <Button
+          color="danger"
+          href="/contact"
+          as={Link}
+          endContent={<FaFire />}
+        >
+          {strings.JOIN_US}
+        </Button>
         <ThemeSwitch />
         <NavbarItem className="hidden sm:flex gap-2">
           <Link
@@ -61,14 +68,14 @@ export const Navbar = () => {
             href={siteConfig.links.facebook}
             aria-label="Facebook"
           >
-            <FaFacebook color="#CA1D2F" />
+            <FaFacebook size={22} color="#CA1D2F" />
           </Link>
           <Link
             isExternal
             href={siteConfig.links.instagram}
             aria-label="Instagram"
           >
-            <FaInstagramSquare color="#CA1D2F" />
+            <FaInstagramSquare size={22} color="#CA1D2F" />
           </Link>
         </NavbarItem>
       </NavbarContent>

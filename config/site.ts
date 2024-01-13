@@ -1,25 +1,35 @@
+import strings from "@/utils/strings";
+
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-  name: "IHK Varaždin",
-  description: "IHK Varaždin",
+  name: strings.CLUB_NAME,
+  description: "Varaždinske vatre",
   navItems: [
     {
-      label: "Novosti",
+      label: strings.NEWS,
       href: "/posts",
     },
     {
-      label: "O klubu",
+      label: strings.CONTACT,
+      href: "/contact",
+    },
+    {
+      label: strings.ABOUT,
       href: "/about",
     },
   ],
   navMenuItems: [
     {
-      label: "Novosti",
+      label: strings.NEWS,
       href: "/posts",
     },
     {
-      label: "O klubu",
+      label: strings.CONTACT,
+      href: "/contact",
+    },
+    {
+      label: strings.ABOUT,
       href: "/about",
     },
   ],
