@@ -1,29 +1,35 @@
 "use client";
-import { Card, CardBody, CardHeader, Image } from "@nextui-org/react";
+import {
+  Card,
+  CardBody,
+  CardFooter,
+  CardHeader,
+  Image,
+} from "@nextui-org/react";
 import { useRouter } from "next/navigation";
 
 export const PostCard = (post2: any) => {
   const { post } = post2;
-  console.log("🚀 ~ file: post-card.tsx:6 ~ PostCard ~ post:", post);
   const { push } = useRouter();
   return (
     <Card
       key={post.id}
       isPressable
+      fullWidth
+      isFooterBlurred
       onPress={() => push(`/posts/${post.id}`)}
       style={{ maxHeight: "300px", maxWidth: "300px", margin: "5px" }}
     >
-      <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
-        <p className="text-tiny uppercase font-bold">{post.subtitle}</p>
-        <h4 className="font-medium text-large">{post.title}</h4>
-      </CardHeader>
-      <CardBody className="overflow-visible py-2">
-        <Image
-          alt="Card background"
-          src={post.image ?? "/dark_logo.png"}
-          width={270}
-        />
-      </CardBody>
+      <Image
+        isZoomed
+        removeWrapper
+        alt="Card background"
+        className="z-0 w-full h-full object-cover"
+        src={post.image ?? "/dark_logo.png"}
+      />
+      <CardFooter className="z-10 top-1 flex-col !items-start">
+        <h5 style={{ marginTop: 0 }}>{post.title}</h5>
+      </CardFooter>
     </Card>
   );
 };

@@ -6,7 +6,7 @@ export default function BlogPage() {
   const allPostsData = getSortedPostsData();
   return (
     <div>
-      <h1 className={title()}>Novosti</h1>
+      <h2 className={title()}>Novosti</h2>
       {allPostsData.map((post) => {
         return <PostCard key={post.id} post={post} />;
       })}

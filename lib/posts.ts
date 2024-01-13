@@ -6,7 +6,6 @@ import html from "remark-html";
 import { TPostData } from "./types";
 
 const postsDirectory = path.join(process.cwd(), "posts");
-console.log("🚀 ~ file: posts.ts:6 ~ postsDirectory:", postsDirectory);
 
 export function getSortedPostsData() {
   // Get file names under /posts
@@ -41,15 +40,13 @@ export function getSortedPostsData() {
 export const getPostData = async (id2: string) => {
   const fileNames = fs.readdirSync(postsDirectory);
   let fileContentt = "";
-  const allPostsData = fileNames.forEach((fileName) => {
+  fileNames.forEach((fileName) => {
     // Remove ".md" from file name to get id
     const id = fileName.replace(/\.md$/, "");
 
-    // Read markdown file as string
-    const fullPath = path.join(postsDirectory, fileName);
-    const fileContents = fs.readFileSync(fullPath, "utf8");
-
     if (id === id2) {
+      const fullPath = path.join(postsDirectory, fileName);
+      const fileContents = fs.readFileSync(fullPath, "utf8");
       fileContentt = fileContents;
     }
   });
@@ -57,6 +54,6 @@ export const getPostData = async (id2: string) => {
   const processedContent = await remark()
     .use(html)
     .process(matterResult.content);
-  const contentHtml = processedContent.toString();
-  return { contentHtml };
+  const contentHtml = processedContent.value.toString();
+  return { title: matterResult.data.title, contentHtml };
 };

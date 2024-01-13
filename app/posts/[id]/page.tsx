@@ -1,3 +1,4 @@
+import { title } from "@/components/primitives";
 import { getPostData } from "@/lib/posts";
 
 export default async function Page({
@@ -5,12 +6,14 @@ export default async function Page({
 }: {
   params: { id: string };
 }) {
-  const allPostsData = await getPostData(id);
+  const postData = await getPostData(id);
 
   return (
     <>
-      <h1>{id}</h1>
-      <div dangerouslySetInnerHTML={{ __html: allPostsData.contentHtml }} />
+      <h1 className={title()}>{postData.title}</h1>
+      <section>
+        <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+      </section>
     </>
   );
 }
