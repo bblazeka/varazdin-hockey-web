@@ -1,15 +1,14 @@
 import { PostCard } from "@/components/post-card";
+import PostList from "@/components/post-list";
 import { title } from "@/components/primitives";
 import { getSortedPostsData } from "@/lib/posts";
 
 export default function BlogPage() {
   const allPostsData = getSortedPostsData();
   return (
-    <div>
+    <section>
       <h2 className={title()}>Novosti</h2>
-      {allPostsData.map((post) => {
-        return <PostCard key={post.id} post={post} />;
-      })}
-    </div>
+      <PostList posts={allPostsData} />
+    </section>
   );
 }
