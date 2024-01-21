@@ -1,3 +1,4 @@
+"use client";
 import {
   Navbar as NextUINavbar,
   NavbarContent,
@@ -22,6 +23,10 @@ import { ThemeSwitch } from "@/components/theme-switch";
 import { Avatar } from "@nextui-org/react";
 
 export const Navbar = () => {
+  const callbk = () => {
+    document.querySelector('[id="join-us"]')?.scrollIntoView();
+  };
+
   return (
     <NextUINavbar maxWidth="xl" position="sticky">
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
@@ -53,12 +58,7 @@ export const Navbar = () => {
         className="hidden sm:flex basis-1/5 sm:basis-full"
         justify="end"
       >
-        <Button
-          color="danger"
-          href="/contact"
-          as={Link}
-          endContent={<FaFire />}
-        >
+        <Button color="danger" onClick={callbk} endContent={<FaFire />}>
           {strings.JOIN_US}
         </Button>
         <ThemeSwitch />

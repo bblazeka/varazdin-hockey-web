@@ -11,8 +11,8 @@ export const siteConfig = {
       href: "/posts",
     },
     {
-      label: strings.CONTACT,
-      href: "/contact",
+      label: strings.TEAM,
+      href: "/team",
     },
     {
       label: strings.ABOUT,
@@ -25,8 +25,8 @@ export const siteConfig = {
       href: "/posts",
     },
     {
-      label: strings.CONTACT,
-      href: "/contact",
+      label: strings.TEAM,
+      href: "/team",
     },
     {
       label: strings.ABOUT,
