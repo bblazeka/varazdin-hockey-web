@@ -44,13 +44,22 @@ export default function RootLayout({
             <Navbar />
             <main className="container mx-auto max-w-7xl px-6 flex-grow">
               {children}
-              <JoinUsComponent></JoinUsComponent>
             </main>
+            <div style={{ padding: "0 5px" }}>
+              <JoinUsComponent></JoinUsComponent>
+            </div>
             <footer
               style={{ justifyContent: "space-around" }}
               className="w-full flex items-center justify-center py-3"
             >
-              IHK Varaždin
+              <div style={{ display: "flex", flexDirection: "column" }}>
+                <h5>IHK Varaždin</h5>
+                <p>
+                  Ulica ulica 12
+                  <br />
+                  4200 Varazdin
+                </p>
+              </div>
               <Link
                 isExternal
                 className="flex items-center gap-1 text-current"
