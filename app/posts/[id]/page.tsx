@@ -8,6 +8,9 @@ export default async function Page({
   params: { id: string };
 }) {
   const postData = await getPostData(id);
+  if (!postData) {
+    return <>Error</>;
+  }
 
   return (
     <>
