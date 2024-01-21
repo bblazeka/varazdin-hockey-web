@@ -12,9 +12,10 @@ export const ArticlesList = () => {
   return (
     <>
       <div style={{ display: "flex", flexWrap: "wrap" }}>
-        {articles.map((article) => {
+        {articles.map((article, index) => {
           return (
             <Card
+              key={index}
               style={{ maxWidth: "200px", margin: "10px" }}
               as={Link}
               href={article.url}
