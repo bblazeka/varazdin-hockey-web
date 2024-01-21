@@ -3,7 +3,7 @@ import path from "path";
 import matter from "gray-matter";
 import { remark } from "remark";
 import html from "remark-html";
-import { TPostData } from "./types";
+import { TPostData, TPostInfo } from "./types";
 
 const postsDirectory = path.join(process.cwd(), "posts");
 
@@ -25,7 +25,7 @@ export function getSortedPostsData() {
     return {
       id,
       ...matterResult.data,
-    } as TPostData;
+    } as TPostInfo;
   });
   // Sort posts by date
   return allPostsData.sort((a, b) => {
@@ -37,23 +37,23 @@ export function getSortedPostsData() {
   });
 }
 
-export const getPostData = async (id2: string) => {
+export const getPostData = async (
+  postId: string
+): Promise<TPostData | undefined> => {
   const fileNames = fs.readdirSync(postsDirectory);
-  let fileContentt = "";
-  fileNames.forEach((fileName) => {
-    // Remove ".md" from file name to get id
-    const id = fileName.replace(/\.md$/, "");
-
-    if (id === id2) {
-      const fullPath = path.join(postsDirectory, fileName);
-      const fileContents = fs.readFileSync(fullPath, "utf8");
-      fileContentt = fileContents;
-    }
+  const fileName = fileNames.find((file) => {
+    const id = file.replace(/\.md$/, "");
+    return id === postId;
   });
-  const matterResult = matter(fileContentt);
+  if (!fileName) {
+    return;
+  }
+  const fullPath = path.join(postsDirectory, fileName);
+  const fileContents = fs.readFileSync(fullPath, "utf8");
+  const matterResult = matter(fileContents);
   const processedContent = await remark()
     .use(html)
     .process(matterResult.content);
   const contentHtml = processedContent.value.toString();
-  return { title: matterResult.data.title, contentHtml };
+  return { title: matterResult.data.title, contentHtml } as TPostData;
 };
