@@ -45,7 +45,7 @@ export default function RootLayout({
             <main className="container mx-auto max-w-7xl px-6 flex-grow">
               {children}
             </main>
-            <div style={{ padding: "0 5px" }}>
+            <div style={{ padding: "0 1vw" }}>
               <JoinUsComponent></JoinUsComponent>
             </div>
             <footer
