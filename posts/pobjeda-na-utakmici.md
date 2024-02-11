@@ -1,9 +1,9 @@
 ---
-title: "Zlatna Proslava 50. Godišnjice: Pobjeda na Prijateljskoj Utakmici s Slovenskom Ekipom"
+title: "Pobjeda na utakmici"
 subtitle: "50 godina hokeja"
-date: "2023-11-11"
+date: "2024-01-31"
 author: "ChatGPT"
-image: "/images/utakmica.jpeg"
+image: "https://d35nxk5xx1d0px.cloudfront.net/repository/images/_variations/b/5/4/7/b5470dee9e6b64061062a209c7707818_view_article.jpg?v=20"
 ---
 
 U jednom od najznačajnijih trenutaka u povijesti našeg kluba, obilježili smo 50 godina izvrsnosti, predanosti i strasti prema hokeju na ledu. Ovaj nevjerojatan jubilej dostigao je vrhunac na prijateljskoj utakmici s našim dragim susjedima iz Slovenije, pruživši nam nezaboravan trenutak pobjede i zajedništva.

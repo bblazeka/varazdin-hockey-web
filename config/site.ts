@@ -36,6 +36,6 @@ export const siteConfig = {
   links: {
     facebook:
       "https://www.facebook.com/people/KHL-Vara%C5%BEdin/100041813816290/",
-    instagram: "https://www.instagram.com/khlvarazdin/?hl=de",
+    instagram: "https://www.instagram.com/ihkvarazdin",
   },
 };

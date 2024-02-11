@@ -18,7 +18,7 @@ export const PostCard = (post2: any) => {
       fullWidth
       isFooterBlurred
       onPress={() => push(`/posts/${post.id}`)}
-      style={{ maxHeight: "300px", maxWidth: "300px", margin: "5px" }}
+      style={{ maxHeight: "250px", width: "300px", margin: "5px" }}
     >
       <Image
         isZoomed

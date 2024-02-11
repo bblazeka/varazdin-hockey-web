@@ -3,7 +3,7 @@ title: "Pobjednički Pohod Hokejaške Ekipe na Turniru u Zagrebu"
 subtitle: "Turnir u Zagrebu"
 date: "2023-12-12"
 author: "ChatGPT"
-image: "https://media.contentapi.ea.com/content/dam/ea/nhl/nhl-22/common/reveal-page/nhl22-section-visualupgrades-xl.png.adapt.320w.png"
+image: "/images/turnir.jpeg"
 ---
 
 Zagreb je nedavno bio poprište uzbuđenja i strasti hokejaškog sporta, gdje je održan turnir sa osam ekipa koje su se nadmetale za prestižnu titulu. Uzbuđenje je dostiglo vrhunac kada je domaća hokejaška ekipa ostvarila impresivnu pobjedu, zadivivši navijače i osvajajući srca ljubitelja sporta diljem grada.
