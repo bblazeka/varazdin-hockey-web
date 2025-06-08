@@ -1,15 +1,10 @@
 "use client";
-import {
-  Card,
-  CardBody,
-  CardFooter,
-  CardHeader,
-  Image,
-} from "@nextui-org/react";
+import { Card, CardFooter, Image } from "@nextui-org/react";
 import { useRouter } from "next/navigation";
+import { TPostInfo } from "@/lib/types";
+import styles from "./post-card.module.css";
 
-export const PostCard = (post2: any) => {
-  const { post } = post2;
+export const PostCard = ({ post }: { post: TPostInfo }) => {
   const { push } = useRouter();
   return (
     <Card
@@ -18,17 +13,17 @@ export const PostCard = (post2: any) => {
       fullWidth
       isFooterBlurred
       onPress={() => push(`/posts/${post.id}`)}
-      style={{ maxHeight: "250px", width: "300px", margin: "5px" }}
+      className={styles.card}
     >
       <Image
         isZoomed
         removeWrapper
         alt="Card background"
-        className="z-0 w-full h-full object-cover"
+        className={styles.image}
         src={post.image ?? "/dark_logo.png"}
       />
-      <CardFooter className="z-10 top-1 flex-col !items-start">
-        <h5 style={{ marginTop: 0 }}>{post.title}</h5>
+      <CardFooter className={styles.footer}>
+        <h5 className={styles.title}>{post.title}</h5>
       </CardFooter>
     </Card>
   );

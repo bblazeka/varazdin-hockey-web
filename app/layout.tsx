@@ -40,19 +40,21 @@ export default function RootLayout({
         )}
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
-          <div className="relative flex flex-col h-screen">
+          <div className="relative flex flex-col min-h-screen">
             <Navbar />
-            <main className="container mx-auto px-6 flex-grow">{children}</main>
-            <div style={{ padding: "0 1vw" }}>
-              <JoinUsComponent></JoinUsComponent>
+            <main className="container mx-auto px-4 sm:px-6 flex-grow w-full max-w-5xl">
+              {children}
+            </main>
+            <div className="px-2 sm:px-6 py-2">
+              <JoinUsComponent />
             </div>
             <footer
+              className="w-full flex flex-col sm:flex-row items-center justify-between gap-4 py-3 px-4 sm:px-8"
               style={{ justifyContent: "space-around" }}
-              className="w-full flex items-center justify-center py-3"
             >
-              <div style={{ display: "flex", flexDirection: "column" }}>
-                <h5>IHK Varaždin</h5>
-                <p>
+              <div className="flex flex-col items-center sm:items-start">
+                <h5 className="font-semibold">IHK Varaždin</h5>
+                <p className="text-sm text-center sm:text-left">
                   Ulica ulica 12
                   <br />
                   4200 Varazdin

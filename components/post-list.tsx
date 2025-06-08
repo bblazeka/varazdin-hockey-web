@@ -3,6 +3,7 @@ import { PostCard } from "@/components/post-card";
 import { Pagination } from "@nextui-org/react";
 import { useState } from "react";
 import styled from "styled-components";
+import { TPostInfo } from "@/lib/types";
 
 const PostsContainer = styled.section`
   display: flex;
@@ -15,7 +16,7 @@ const PostsContainer = styled.section`
 `;
 
 type TProps = {
-  readonly posts: any[];
+  readonly posts: TPostInfo[];
 };
 
 export default function PostList({ posts }: TProps) {
