@@ -1,5 +1,7 @@
+"use client";
+
 import articles from "@/utils/articles";
-import { Card, CardBody, CardFooter, Divider } from "@nextui-org/react";
+import { Card, CardBody } from "@heroui/react";
 import Link from "next/link";
 
 export const ArticlesList = () => {

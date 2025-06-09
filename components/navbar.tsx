@@ -7,11 +7,11 @@ import {
   NavbarBrand,
   NavbarItem,
   NavbarMenuItem,
-} from "@nextui-org/navbar";
-import { Button } from "@nextui-org/button";
-import { Link } from "@nextui-org/link";
+} from "@heroui/navbar";
+import { Button } from "@heroui/button";
+import { Link } from "@heroui/link";
 
-import { link as linkStyles } from "@nextui-org/theme";
+import { link as linkStyles } from "@heroui/theme";
 
 import { siteConfig } from "@/config/site";
 import strings from "@/utils/strings";
@@ -20,7 +20,7 @@ import clsx from "clsx";
 import { FaFacebook, FaInstagramSquare, FaFire } from "react-icons/fa";
 
 import { ThemeSwitch } from "@/components/theme-switch";
-import { Avatar } from "@nextui-org/react";
+import { Avatar } from "@heroui/react";
 
 export const Navbar = () => {
   const callbk = () => {

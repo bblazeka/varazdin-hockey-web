@@ -1,5 +1,5 @@
 "use client";
-import { Card, CardFooter, Image } from "@nextui-org/react";
+import { Card, CardFooter, Image } from "@heroui/react";
 import { useRouter } from "next/navigation";
 import { TPostInfo } from "@/lib/types";
 

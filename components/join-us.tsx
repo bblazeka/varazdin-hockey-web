@@ -1,10 +1,6 @@
-import {
-  Card,
-  CardBody,
-  CardFooter,
-  CardHeader,
-  Chip,
-} from "@nextui-org/react";
+"use client";
+
+import { Card, CardBody } from "@heroui/react";
 
 export const JoinUsComponent = () => {
   return (

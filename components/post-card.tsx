@@ -1,5 +1,5 @@
 "use client";
-import { Card, CardFooter, Image } from "@nextui-org/react";
+import { Card, CardFooter, Image } from "@heroui/react";
 import { useRouter } from "next/navigation";
 import { TPostInfo } from "@/lib/types";
 import styles from "./post-card.module.css";
@@ -23,7 +23,9 @@ export const PostCard = ({ post }: { post: TPostInfo }) => {
         src={post.image ?? "/dark_logo.png"}
       />
       <CardFooter className={styles.footer}>
-        <h5 className={styles.title}>{post.title}</h5>
+        <span className={styles.title} style={{ fontWeight: "bold" }}>
+          {post.title}
+        </span>
       </CardFooter>
     </Card>
   );

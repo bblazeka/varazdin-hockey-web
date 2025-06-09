@@ -1,6 +1,6 @@
 "use client";
 import { PostCard } from "@/components/post-card";
-import { Pagination } from "@nextui-org/react";
+import { Pagination } from "@heroui/react";
 import { useState } from "react";
 import { HighlightedPost } from "./highlighted-post";
 import styles from "./post-carousel.module.css";

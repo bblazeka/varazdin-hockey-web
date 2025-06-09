@@ -1,5 +1,5 @@
 ---
-title: "Pobjednički Pohod Hokejaške Ekipe na Turniru u Zagrebu"
+title: "Pobjednički Pohod u Zagrebu"
 subtitle: "Turnir u Zagrebu"
 date: "2023-12-12"
 author: "ChatGPT"

@@ -1,7 +1,5 @@
 "use client";
 import { PostCard } from "@/components/post-card";
-import { Pagination } from "@nextui-org/react";
-import { useState } from "react";
 import styled from "styled-components";
 import { TPostInfo } from "@/lib/types";
 
