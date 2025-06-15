@@ -4,7 +4,12 @@ import TextContainer from "@/app/posts/[id]/text-container";
 import { PageProps } from "@/.next/types/app/page";
 
 export default async function Page(props: PageProps) {
-  const postData = await getPostData((await props.params)?.id ?? "");
+  const idProp = (await props.params)?.id;
+  if (!idProp) {
+    return <>Error: Post ID is missing</>;
+  }
+
+  const postData = await getPostData(idProp);
 
   if (!postData) {
     return <>Error</>;
