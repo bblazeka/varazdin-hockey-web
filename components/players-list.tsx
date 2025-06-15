@@ -10,47 +10,47 @@ import {
   TableRow,
 } from "@heroui/react";
 
-type Player = {
+type TPlayer = {
+  jerseyNumber: number;
   name: string;
-  birthDate: string;
-  height: string;
+  age: number;
 };
 
-type PlayersGroup = {
+type TPlayersGroup = {
   label: string;
-  players: Player[];
+  players: TPlayer[];
 };
 
-const groups: PlayersGroup[] = [
+const groups: TPlayersGroup[] = [
   {
     label: "Seniori",
     players: [
-      { name: "Luka Kovač", birthDate: "01.01.2000.", height: "1,98m" },
-      { name: "Antonio Vukić", birthDate: "01.02.2000.", height: "1,88m" },
-      { name: "Marko Jurić", birthDate: "01.01.2000.", height: "1,98m" },
-      { name: "Ivan Horvat", birthDate: "01.03.2000.", height: "1,78m" },
+      { jerseyNumber: 9, name: "Luka Kovač", age: 24 },
+      { jerseyNumber: 12, name: "Antonio Vukić", age: 24 },
+      { jerseyNumber: 7, name: "Marko Jurić", age: 24 },
+      { jerseyNumber: 4, name: "Ivan Horvat", age: 24 },
     ],
   },
   {
     label: "Veterani",
     players: [
-      { name: "Mateo Šimić", birthDate: "01.01.2000.", height: "1,98m" },
-      { name: "Petar Novak", birthDate: "01.02.2000.", height: "1,88m" },
-      { name: "Ivan Babić", birthDate: "01.01.2000.", height: "1,98m" },
+      { jerseyNumber: 11, name: "Mateo Šimić", age: 24 },
+      { jerseyNumber: 22, name: "Petar Novak", age: 24 },
+      { jerseyNumber: 15, name: "Ivan Babić", age: 24 },
     ],
   },
   {
     label: "Juniori",
     players: [
-      { name: "Filip Pavić", birthDate: "01.01.2000.", height: "1,98m" },
-      { name: "Saša Tomić", birthDate: "01.02.2000.", height: "1,88m" },
+      { jerseyNumber: 18, name: "Filip Pavić", age: 24 },
+      { jerseyNumber: 21, name: "Saša Tomić", age: 24 },
     ],
   },
 ];
 
 export const PlayersListComponent = ({
   groups: propGroups,
-}: { groups?: PlayersGroup[] } = {}) => {
+}: { groups?: TPlayersGroup[] } = {}) => {
   const data = propGroups ?? groups;
   return (
     <Accordion>
@@ -62,16 +62,16 @@ export const PlayersListComponent = ({
         >
           <Table aria-label={`${group.label} table`}>
             <TableHeader>
+              <TableColumn>Broj</TableColumn>
               <TableColumn>Ime</TableColumn>
-              <TableColumn>Datum rođenja</TableColumn>
-              <TableColumn>Visina</TableColumn>
+              <TableColumn>Godine</TableColumn>
             </TableHeader>
             <TableBody>
               {group.players.map((player, i) => (
-                <TableRow key={player.name + i}>
+                <TableRow key={player.jerseyNumber + player.name + i}>
+                  <TableCell>{player.jerseyNumber}</TableCell>
                   <TableCell>{player.name}</TableCell>
-                  <TableCell>{player.birthDate}</TableCell>
-                  <TableCell>{player.height}</TableCell>
+                  <TableCell>{player.age}</TableCell>
                 </TableRow>
               ))}
             </TableBody>
