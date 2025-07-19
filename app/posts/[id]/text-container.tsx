@@ -5,7 +5,11 @@ const PostTextContainer = styled.section`
   padding: 1em;
 `;
 
-export default function TextContainer({ content }: any) {
+type TTextContainerProps = {
+  readonly content: string;
+};
+
+export default function TextContainer({ content }: TTextContainerProps) {
   return (
     <PostTextContainer>
       <div dangerouslySetInnerHTML={{ __html: content }} />
