@@ -1,18 +1,19 @@
 import { format, parseISO } from "date-fns";
+import { hr } from "date-fns/locale";
 
 /**
  * Format a date in a human-readable format
  * @param {Date|string} date The date to format
- * @param {string} formatStr The format string (default: 'MMMM d, yyyy')
+ * @param {string} formatStr The format string (default: 'd. MMMM yyyy.')
  * @returns {string} The formatted date
  */
-export function formatDate(date, formatStr = "MMMM d, yyyy") {
+export function formatDate(date, formatStr = "d. MMMM yyyy.") {
   if (!date) return "";
-  
+
   // If date is a string, parse it
   const dateObj = typeof date === "string" ? parseISO(date) : date;
-  
-  return format(dateObj, formatStr);
+
+  return format(dateObj, formatStr, { locale: hr });
 }
 
 /**
@@ -22,10 +23,10 @@ export function formatDate(date, formatStr = "MMMM d, yyyy") {
  */
 export function isFutureDate(date) {
   if (!date) return false;
-  
+
   // If date is a string, parse it
   const dateObj = typeof date === "string" ? parseISO(date) : date;
-  
+
   return dateObj > new Date();
 }
 
@@ -36,9 +37,9 @@ export function isFutureDate(date) {
  */
 export function isPastDate(date) {
   if (!date) return false;
-  
+
   // If date is a string, parse it
   const dateObj = typeof date === "string" ? parseISO(date) : date;
-  
+
   return dateObj < new Date();
 }
