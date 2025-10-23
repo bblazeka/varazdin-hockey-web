@@ -1,0 +1,149 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHeader from "../components/Sections/PageHeader.astro";
+---
+
+<BaseLayout
+  title="Raspored - IHK Varaždin"
+  description="Raspored treninga i utakmica IHK Varaždin. Pridružite nam se na treninzima ili dođite navijati!"
+>
+  <PageHeader
+    title="Raspored"
+    subtitle="Treninzi i utakmice"
+    backgroundImage="/uploads/schedule-header-bg.webp"
+  />
+
+  <!-- Training Schedule -->
+  <section class="py-16 bg-white">
+    <div class="container">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">Raspored treninga</h2>
+        <p class="text-lg text-gray-600 text-center mb-12">
+          Treninzi se održavaju u Ledenoj dvorani Varaždin
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Tuesday -->
+          <div class="bg-primary-50 border-2 border-primary-200 rounded-lg p-8 text-center hover:shadow-lg transition-shadow">
+            <div class="mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-2">Utorak</h3>
+            <p class="text-3xl font-bold text-primary-600 mb-2">18:00</p>
+            <p class="text-gray-600">Ledena dvorana Varaždin</p>
+          </div>
+
+          <!-- Thursday -->
+          <div class="bg-primary-50 border-2 border-primary-200 rounded-lg p-8 text-center hover:shadow-lg transition-shadow">
+            <div class="mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-2">Četvrtak</h3>
+            <p class="text-3xl font-bold text-primary-600 mb-2">18:00</p>
+            <p class="text-gray-600">Ledena dvorana Varaždin</p>
+          </div>
+
+          <!-- Sunday -->
+          <div class="bg-primary-50 border-2 border-primary-200 rounded-lg p-8 text-center hover:shadow-lg transition-shadow">
+            <div class="mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-2">Nedjelja</h3>
+            <p class="text-3xl font-bold text-primary-600 mb-2">09:00</p>
+            <p class="text-gray-600">Ledena dvorana Varaždin</p>
+          </div>
+        </div>
+
+        <div class="mt-12 bg-blue-50 border-l-4 border-blue-400 p-6 rounded">
+          <div class="flex items-start">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-400 mr-3 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <div>
+              <h4 class="font-bold text-blue-900 mb-1">Napomena</h4>
+              <p class="text-blue-800">
+                Raspored treninga može biti podložan promjenama. Za najnovije informacije kontaktirajte nas ili pratite naše društvene mreže.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Matches Schedule -->
+  <section class="py-16 bg-gray-50">
+    <div class="container">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">Raspored utakmica</h2>
+        <p class="text-lg text-gray-600 text-center mb-12">
+          Nadolazeće utakmice i rezultati
+        </p>
+
+        <!-- Next Match Preview -->
+        <div class="bg-white p-8 rounded-lg shadow-lg mb-8">
+          <div class="text-center mb-6">
+            <span class="inline-block bg-green-100 text-green-800 text-sm font-semibold px-3 py-1 rounded-full">
+              Sljedeća utakmica
+            </span>
+          </div>
+
+          <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+            <div class="flex-1 text-center">
+              <h3 class="text-2xl font-bold mb-2">IHK Varaždin</h3>
+              <p class="text-gray-600">Domaćin</p>
+            </div>
+
+            <div class="text-center">
+              <p class="text-5xl font-bold text-primary-600 mb-3">VS</p>
+              <p class="text-xl font-semibold text-gray-900">Subota, 20:00</p>
+              <p class="text-sm text-gray-500 mt-1">Ledena dvorana Varaždin</p>
+            </div>
+
+            <div class="flex-1 text-center">
+              <h3 class="text-2xl font-bold mb-2">Protivnik</h3>
+              <p class="text-gray-600">Gost</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Link to Full Events -->
+        <div class="text-center">
+          <a
+            href="/events"
+            class="inline-flex items-center justify-center px-6 py-3 text-base font-medium text-white bg-primary-600 rounded-md shadow-sm hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 transition-colors"
+          >
+            Pogledaj sve događaje
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact CTA -->
+  <section class="py-16 bg-white">
+    <div class="container">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-4">Želiš trenirati s nama?</h2>
+        <p class="text-lg text-gray-600 mb-8">
+          Kontaktiraj nas za više informacija o pridruživanju timu ili dođi na jedan od naših treninga!
+        </p>
+        <a
+          href="/contact"
+          class="inline-flex items-center justify-center px-6 py-3 text-base font-medium text-white bg-primary-600 rounded-md shadow-sm hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 transition-colors"
+        >
+          Kontaktiraj nas
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,114 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  image?: {
+    url: string;
+    alt: string;
+  };
+  type?: "website" | "article";
+  canonicalUrl?: string;
+}
+
+const {
+  title,
+  description,
+  image = {
+    url: "/uploads/team-default.webp",
+    alt: "IHK Varaždin",
+  },
+  type = "website",
+  canonicalUrl,
+} = Astro.props;
+
+// Get the canonical URL
+const canonicalURL = canonicalUrl || new URL(Astro.url.pathname, Astro.site);
+
+// Get team address and contact info (would come from site config in a real implementation)
+const teamInfo = {
+  name: "IHK Varaždin",
+  address: {
+    streetAddress: "Ledena dvorana Varaždin",
+    addressLocality: "Varaždin",
+    addressRegion: "Varaždinska",
+    postalCode: "42000",
+    addressCountry: "HR",
+  },
+  telephone: "+385-12-345-6789",
+  email: "info@ihkvarazdin.hr",
+  url: Astro.site?.toString() || "https://ihkvarazdin.hr",
+};
+---
+
+<!-- Basic SEO -->
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonicalURL} />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content={type} />
+<meta property="og:url" content={canonicalURL} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={new URL(image.url, Astro.site)} />
+<meta property="og:image:alt" content={image.alt} />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={canonicalURL} />
+<meta property="twitter:title" content={title} />
+<meta property="twitter:description" content={description} />
+<meta property="twitter:image" content={new URL(image.url, Astro.site)} />
+<meta property="twitter:image:alt" content={image.alt} />
+
+<!-- JSON-LD Schema for Sports Team -->
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsTeam",
+    "name": "${teamInfo.name}",
+    "sport": "Ice Hockey",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "${teamInfo.address.streetAddress}",
+      "addressLocality": "${teamInfo.address.addressLocality}",
+      "addressRegion": "${teamInfo.address.addressRegion}",
+      "postalCode": "${teamInfo.address.postalCode}",
+      "addressCountry": "${teamInfo.address.addressCountry}"
+    },
+    "telephone": "${teamInfo.telephone}",
+    "email": "${teamInfo.email}",
+    "url": "${teamInfo.url}",
+    "sameAs": [
+      "https://facebook.com/ihkvarazdin",
+      "https://instagram.com/ihkvarazdin"
+    ]
+  }
+</script>
+
+{
+  type === "article" && (
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "${title}",
+        "image": "${new URL(image.url, Astro.site)}",
+        "description": "${description}",
+        "publisher": {
+          "@type": "Organization",
+          "name": "${teamInfo.name}",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "${new URL("/uploads/logo.png", Astro.site)}"
+          }
+        },
+        "url": "${canonicalURL}",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "${canonicalURL}"
+        }
+      }
+    </script>
+  )
+}
