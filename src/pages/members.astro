@@ -1,0 +1,94 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHeader from "../components/Sections/PageHeader.astro";
+
+// List of club members
+const members = [
+  "Radovan Aralica",
+  "Petar Burazin",
+  "Branko Cindrić",
+  "Dario Dilber",
+  "Patrik Gradinščak",
+  "Tomica Kostric",
+  "Jura Nikšić",
+  "Jan Ožeg",
+  "Viktor Ožeg",
+  "Nikola Prpić",
+  "Matija Roki",
+  "Mladen Savić",
+  "Davor Strelec",
+  "Mario Šanjek",
+  "Željko Tomašić",
+  "Fran Zorman",
+  "Fran Pomper",
+  "Alen Pomper",
+  "Bruno Blažeka",
+  "Marko Stilnović",
+  "Nikola Stilinović",
+  "Neven Mlakar",
+  "Dražen Turković",
+  "Ranko Haslinger",
+  "Petar Nevžala",
+  "Lovro Šeb",
+  "Luka Šimunović",
+  "Tomislav Turk",
+  "Danijel Peti",
+].sort((a, b) => {
+  const lastNameA = a.split(' ').pop() || '';
+  const lastNameB = b.split(' ').pop() || '';
+  return lastNameA.localeCompare(lastNameB, 'hr');
+});
+
+// Honorary members
+const honoraryMembers = [
+  "Antun Mišanović",
+];
+---
+
+<BaseLayout
+  title="Članovi - IHK Varaždin"
+  description="Popis članova IHK Varaždin."
+>
+  <PageHeader
+    title="Članovi kluba"
+    subtitle="Popis članova IHK Varaždin"
+    backgroundImage="https://images.unsplash.com/photo-1515703407324-5f753afd8be8?w=1920&h=600&fit=crop&crop=center"
+  />
+
+  <!-- Members List -->
+  <section class="py-16">
+    <div class="container">
+      <div class="max-w-4xl mx-auto space-y-8">
+        <!-- Honorary Members -->
+        <div class="bg-white rounded-lg shadow-md p-8">
+          <h2 class="text-2xl font-bold mb-6 text-gray-800">Počasni član</h2>
+
+          <div class="flex justify-center">
+            {honoraryMembers.map((member) => (
+              <div class="p-3 border-2 border-yellow-500 rounded-md">
+                <p class="text-sm font-medium text-gray-800">{member}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Regular Members -->
+        <div class="bg-white rounded-lg shadow-md p-8">
+          <h2 class="text-3xl font-bold mb-8 text-center">Članovi kluba</h2>
+
+          <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+            {members.map((member) => (
+              <div class="p-3 border border-gray-200 rounded-md hover:border-primary-500 hover:shadow-sm transition-all">
+                <p class="text-sm font-medium text-gray-800">{member}</p>
+              </div>
+            ))}
+          </div>
+
+          <div class="mt-8 pt-8 border-t border-gray-200 text-center text-gray-600">
+            <p>Ukupno članova: <span class="font-bold text-primary-600">{members.length}</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
