@@ -1,6 +1,12 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PageHeader from "../components/Sections/PageHeader.astro";
+import { getCollection } from 'astro:content';
+import { formatDate } from '../utils/dateFormatter';
+
+// Get the next game from the games collection
+const games = await getCollection('games');
+const nextGame = games.find(game => game.data.isNextGame && !game.data.draft);
 ---
 
 <BaseLayout
@@ -19,7 +25,7 @@ import PageHeader from "../components/Sections/PageHeader.astro";
       <div class="max-w-4xl mx-auto">
         <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">Raspored treninga</h2>
         <p class="text-lg text-gray-600 text-center mb-12">
-          Treninzi se održavaju u Ledenoj dvorani Varaždin
+          Treninzi se održavaju u Klizalištu Varaždin
         </p>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -32,7 +38,7 @@ import PageHeader from "../components/Sections/PageHeader.astro";
             </div>
             <h3 class="text-2xl font-bold text-gray-900 mb-2">Utorak</h3>
             <p class="text-3xl font-bold text-primary-600 mb-2">18:00</p>
-            <p class="text-gray-600">Ledena dvorana Varaždin</p>
+            <p class="text-gray-600">Klizalište Varaždin</p>
           </div>
 
           <!-- Thursday -->
@@ -44,7 +50,7 @@ import PageHeader from "../components/Sections/PageHeader.astro";
             </div>
             <h3 class="text-2xl font-bold text-gray-900 mb-2">Četvrtak</h3>
             <p class="text-3xl font-bold text-primary-600 mb-2">18:00</p>
-            <p class="text-gray-600">Ledena dvorana Varaždin</p>
+            <p class="text-gray-600">Klizalište Varaždin</p>
           </div>
 
           <!-- Sunday -->
@@ -56,7 +62,7 @@ import PageHeader from "../components/Sections/PageHeader.astro";
             </div>
             <h3 class="text-2xl font-bold text-gray-900 mb-2">Nedjelja</h3>
             <p class="text-3xl font-bold text-primary-600 mb-2">09:00</p>
-            <p class="text-gray-600">Ledena dvorana Varaždin</p>
+            <p class="text-gray-600">Klizalište Varaždin</p>
           </div>
         </div>
 
@@ -86,32 +92,44 @@ import PageHeader from "../components/Sections/PageHeader.astro";
           Nadolazeće utakmice i rezultati
         </p>
 
-        <!-- Next Match Preview -->
-        <div class="bg-white p-8 rounded-lg shadow-lg mb-8">
-          <div class="text-center mb-6">
-            <span class="inline-block bg-green-100 text-green-800 text-sm font-semibold px-3 py-1 rounded-full">
-              Sljedeća utakmica
-            </span>
-          </div>
-
-          <div class="flex flex-col md:flex-row items-center justify-between gap-8">
-            <div class="flex-1 text-center">
-              <h3 class="text-2xl font-bold mb-2">IHK Varaždin</h3>
-              <p class="text-gray-600">Domaćin</p>
+        {nextGame ? (
+          <!-- Next Match Preview -->
+          <div class="bg-white p-8 rounded-lg shadow-lg mb-8">
+            <div class="text-center mb-6">
+              <span class="inline-block bg-green-100 text-green-800 text-sm font-semibold px-3 py-1 rounded-full">
+                Sljedeća utakmica
+              </span>
             </div>
 
+            <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+              <div class="flex-1 text-center">
+                <h3 class="text-2xl font-bold mb-2">{nextGame.data.homeTeam}</h3>
+                <p class="text-gray-600">Domaćin</p>
+              </div>
+
+              <div class="text-center">
+                <p class="text-5xl font-bold text-primary-600 mb-3">VS</p>
+                <p class="text-xl font-semibold text-gray-900">{formatDate(nextGame.data.date, nextGame.data.time)}</p>
+                <p class="text-sm text-gray-500 mt-1">{nextGame.data.location}</p>
+              </div>
+
+              <div class="flex-1 text-center">
+                <h3 class="text-2xl font-bold mb-2">{nextGame.data.awayTeam}</h3>
+                <p class="text-gray-600">Gost</p>
+              </div>
+            </div>
+          </div>
+        ) : (
+          <div class="bg-white p-8 rounded-lg shadow-lg mb-8">
             <div class="text-center">
-              <p class="text-5xl font-bold text-primary-600 mb-3">VS</p>
-              <p class="text-xl font-semibold text-gray-900">Subota, 20:00</p>
-              <p class="text-sm text-gray-500 mt-1">Ledena dvorana Varaždin</p>
-            </div>
-
-            <div class="flex-1 text-center">
-              <h3 class="text-2xl font-bold mb-2">Protivnik</h3>
-              <p class="text-gray-600">Gost</p>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto text-gray-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+              <p class="text-xl text-gray-600">Trenutno nema zakazanih utakmica</p>
+              <p class="text-gray-500 mt-2">Provjerite kasnije za nove termine</p>
             </div>
           </div>
-        </div>
+        )}
 
         <!-- Link to Full Events -->
         <div class="text-center">

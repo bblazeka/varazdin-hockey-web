@@ -1,0 +1,153 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHeader from "../components/Sections/PageHeader.astro";
+---
+
+<BaseLayout
+  title="Škola hokeja - IHK Varaždin"
+  description="Škola hokeja za djecu u IHK Varaždin. Treninzi tri puta tjedno ujutro, maksimalno 10 djece u grupi. Profesionalni treneri i individualan pristup."
+>
+  <PageHeader
+    title="Škola hokeja"
+    subtitle="Program za djecu - mali broj polaznika, maksimalna pažnja!"
+    backgroundImage="/uploads/schedule-header-bg.webp"
+  />
+
+  <!-- Hockey School Info -->
+  <section class="py-16 bg-white">
+    <div class="container">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">O školi hokeja</h2>
+          <p class="text-lg text-gray-600">
+            Naša škola hokeja nudi kvalitetan program obuke za mlade hokejiste u malim grupama s maksimalnom pažnjom za svako dijete.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-xl p-8 mb-12">
+          <div class="flex items-center justify-center mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+            </svg>
+          </div>
+
+          <div class="text-center mb-8">
+            <p class="text-xl font-semibold text-gray-900 mb-2">
+              <span class="inline-flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+                Do 10 djece u grupi
+              </span>
+            </p>
+            <p class="text-gray-600">Individualan pristup svakom djetetu</p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Monday -->
+            <div class="bg-primary-50 border-2 border-primary-200 rounded-lg p-6 text-center hover:shadow-lg transition-shadow">
+              <div class="mb-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mx-auto text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2">Ponedjeljak</h3>
+              <p class="text-2xl font-bold text-primary-600">Ujutro</p>
+            </div>
+
+            <!-- Wednesday -->
+            <div class="bg-primary-50 border-2 border-primary-200 rounded-lg p-6 text-center hover:shadow-lg transition-shadow">
+              <div class="mb-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mx-auto text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2">Srijeda</h3>
+              <p class="text-2xl font-bold text-primary-600">Ujutro</p>
+            </div>
+
+            <!-- Friday -->
+            <div class="bg-primary-50 border-2 border-primary-200 rounded-lg p-6 text-center hover:shadow-lg transition-shadow">
+              <div class="mb-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mx-auto text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2">Petak</h3>
+              <p class="text-2xl font-bold text-primary-600">Ujutro</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Benefits -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+          <div class="bg-gradient-to-r from-green-50 to-blue-50 border-l-4 border-green-400 p-6 rounded">
+            <div class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600 mr-3 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <div>
+                <h4 class="font-bold text-gray-900 mb-2">Zašto škola hokeja?</h4>
+                <ul class="text-gray-800 space-y-1">
+                  <li>• Profesionalni treneri s iskustvom rada s djecom</li>
+                  <li>• Maksimalno 10 djece u grupi za bolju edukaciju</li>
+                  <li>• Jutarnji termini prilagođeni djeci</li>
+                  <li>• Siguran i kontroliran okoliš za učenje</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-r from-blue-50 to-purple-50 border-l-4 border-blue-400 p-6 rounded">
+            <div class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600 mr-3 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+              <div>
+                <h4 class="font-bold text-gray-900 mb-2">Što djeca uče?</h4>
+                <ul class="text-gray-800 space-y-1">
+                  <li>• Osnovne vještine klizanja na ledu</li>
+                  <li>• Pravilno držanje palice i šuta</li>
+                  <li>• Timski rad i sportski duh</li>
+                  <li>• Fizičku kondiciju i koordinaciju</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-blue-50 border-l-4 border-blue-400 p-6 rounded mb-8">
+          <div class="flex items-start">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-400 mr-3 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <div>
+              <h4 class="font-bold text-blue-900 mb-1">Napomena</h4>
+              <p class="text-blue-800">
+                Treninzi se održavaju u Klizalištu Varaždin. Za više informacija o upisu, cijenama i raspoloživim mjestima kontaktirajte nas.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact CTA -->
+  <section class="py-16 bg-gradient-to-br from-primary-50 to-blue-50">
+    <div class="container">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-4">Zainteresirani ste za školu hokeja?</h2>
+        <p class="text-lg text-gray-600 mb-8">
+          Kontaktirajte nas za više informacija o upisu, raspoloživim mjestima i cijenama!
+        </p>
+        <a
+          href="/contact"
+          class="inline-flex items-center justify-center px-6 py-3 text-base font-medium text-white bg-primary-600 rounded-md shadow-sm hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 transition-colors"
+        >
+          Kontaktiraj nas
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

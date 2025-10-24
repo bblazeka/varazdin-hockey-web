@@ -1,0 +1,53 @@
+---
+import { getCollection } from 'astro:content';
+import Button from '../UI/Button.astro';
+import { formatDate } from '../../utils/dateFormatter';
+
+// Get the next game from the games collection
+const games = await getCollection('games');
+const nextGame = games.find(game => game.data.isNextGame && !game.data.draft);
+---
+
+<section class="py-16 bg-white">
+  <div class="container">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">Sljedeća utakmica</h2>
+
+      {nextGame ? (
+        <div class="bg-gray-50 p-8 rounded-lg shadow-lg mb-8">
+          <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+            <div class="flex-1 text-center">
+              <h3 class="text-2xl font-bold mb-2">{nextGame.data.homeTeam}</h3>
+              <p class="text-gray-600">Domaćin</p>
+            </div>
+
+            <div class="text-center">
+              <p class="text-4xl font-bold text-primary-600 mb-2">VS</p>
+              <p class="text-gray-600">{formatDate(nextGame.data.date, nextGame.data.time)}</p>
+              <p class="text-sm text-gray-500">{nextGame.data.location}</p>
+            </div>
+
+            <div class="flex-1 text-center">
+              <h3 class="text-2xl font-bold mb-2">{nextGame.data.awayTeam}</h3>
+              <p class="text-gray-600">Gost</p>
+            </div>
+          </div>
+        </div>
+      ) : (
+        <div class="bg-gray-50 p-8 rounded-lg shadow-lg mb-8">
+          <div class="text-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto text-gray-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+            <p class="text-xl text-gray-600">Trenutno nema zakazanih utakmica</p>
+            <p class="text-gray-500 mt-2">Provjerite kasnije za nove termine</p>
+          </div>
+        </div>
+      )}
+
+      <Button href="/schedule" variant="outline">
+        Pogledaj raspored
+      </Button>
+    </div>
+  </div>
+</section>

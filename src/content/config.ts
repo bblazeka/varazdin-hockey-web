@@ -41,8 +41,23 @@ const siteInfoCollection = defineCollection({
   }),
 });
 
+const gamesCollection = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    homeTeam: z.string(),
+    awayTeam: z.string(),
+    date: z.date(),
+    time: z.string(),
+    location: z.string(),
+    isNextGame: z.boolean().default(false),
+    draft: z.boolean().default(false),
+  }),
+});
+
 export const collections = {
   events: eventsCollection,
   news: newsCollection,
   siteInfo: siteInfoCollection,
+  games: gamesCollection,
 };
