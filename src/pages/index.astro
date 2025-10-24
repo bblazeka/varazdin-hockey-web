@@ -4,12 +4,23 @@ import HeroSection from "../components/Sections/HeroSection.astro";
 import EventList from "../components/Sections/EventList.astro";
 import NextGame from "../components/Sections/NextGame.astro";
 import Button from "../components/UI/Button.astro";
+
+// Sponsors list
+const sponsors = [
+  { name: "Glaz", logo: "/uploads/sponsors/glaz-logo-new.png", url: "https://glaz.hr/", darkBg: false },
+  { name: "Gloria", logo: "/uploads/sponsors/Gloria_logo.png", url: "https://www.instagram.com/gloria_cafe_bar/", darkBg: true },
+  { name: "Marlex", logo: "/uploads/sponsors/marlex.png", url: "https://marlex.hr", darkBg: false },
+  { name: "Pokos", logo: "/uploads/sponsors/Pokos.jpg", url: "https://www.ograde-pokos.hr/", darkBg: false },
+  { name: "Schwabos", logo: "/uploads/sponsors/schwabos.png", url: "https://www.schwabos.com/", darkBg: false },
+  { name: "Sportska Petica", logo: "/uploads/sponsors/sportska_5ica.png", url: "https://www.instagram.com/sportska5ica/", darkBg: false },
+  { name: "Tvornica Leda", logo: "/uploads/sponsors/TVORNICALEDA.png", url: "https://tvornicaleda.hr/", darkBg: false },
+];
 ---
 
 <BaseLayout>
   <HeroSection
     title="IHK Varaždin"
-    subtitle="Tradicija, strast i hockey duh Varaždina"
+    subtitle="Tradicija, strast i duh hokeja u Varaždinu"
     backgroundImage="/uploads/events/ledeni-pak-2025.jpg"
     ctaText="Raspored"
     ctaLink="/schedule"
@@ -37,7 +48,7 @@ import Button from "../components/UI/Button.astro";
             IHK Varaždin je hokejski klub s dugom tradicijom u gradu Varaždinu. Kroz godine gradimo snažnu zajednicu igrača, navijača i ljubitelja hokeja koji dijele strast prema ovom sportu.
           </p>
           <p class="text-gray-700 mb-8 text-lg">
-            Naš cilj je promicati hockey u regiji, razvijati mlade talente i pružiti kvalitetan sportski sadržaj našoj zajednici. Pridruži nam se na ledu ili na tribinama!
+            Naš cilj je promicati hokej u regiji, razvijati mlade talente i pružiti kvalitetan sportski sadržaj našoj zajednici. Pridruži nam se na ledu ili na tribinama!
           </p>
 
           <Button href="/about-us">
@@ -96,6 +107,30 @@ import Button from "../components/UI/Button.astro";
             Pogledaj raspored
           </Button>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sponsors Section -->
+  <section class="py-12 bg-gray-50">
+    <div class="container">
+      <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">Naši sponzori</h2>
+
+      <div class="flex flex-wrap justify-center gap-6 max-w-5xl mx-auto">
+        {sponsors.map((sponsor) => (
+          <a
+            href={sponsor.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class={`flex items-center justify-center p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow w-48 ${sponsor.darkBg ? 'bg-black' : 'bg-white'}`}
+          >
+            <img
+              src={sponsor.logo}
+              alt={sponsor.name}
+              class="max-h-20 w-auto object-contain grayscale hover:grayscale-0 transition-all"
+            />
+          </a>
+        ))}
       </div>
     </div>
   </section>
