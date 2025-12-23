@@ -8,9 +8,8 @@ Informacije o treninzima i kontaktnim satima IHK Varaždin:
 
 - **Utorak:** 18:00 - 19:30
 - **Četvrtak:** 18:00 - 19:30
-- **Nedjelja:** 09:00 - 10:30
 
-Svi treninzi se održavaju u Ledenoj dvorani Varaždin.
+Svi treninzi se održavaju na Klizalištu Varaždin.
 
 ### Kontakt
 
