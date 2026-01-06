@@ -27,25 +27,21 @@ import PageHeader from "../components/Sections/PageHeader.astro";
           </p>
         </div>
 
-        <div class="bg-white rounded-xl shadow-xl p-6 md:p-8 mb-12">
-              <div class="text-center">
-                  <div class="flex items-center justify-center mb-3">
-                      <svg class="h-5 w-5 text-primary-600 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                      </svg>
-                      <p class="text-primary-900 font-bold">
-                          Škola hokeja održava se od 29.12. do 4.1.
-                      </p>
-                  </div>
-                  <div class="flex items-center justify-center text-gray-700">
-                      <svg class="h-5 w-5 text-primary-600 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                      <p class="font-medium">
-                          3 termina dnevno od 8 do 11 sati - od početnika do naprednih
-                      </p>
-                  </div>
-              </div>
+        <!-- Images Section -->
+        <div class="grid grid-cols-2 md:grid-cols-2 gap-6 mb-12 max-w-2xl mx-auto">
+          <div class="rounded-xl overflow-hidden shadow-lg">
+            <img 
+              src="/uploads/news/skola-klizanja-2026.jpg" 
+              alt="Škola klizanja 2026" 
+              class="w-full h-80 object-cover"
+            />
+          </div>
+          <div class="rounded-xl overflow-hidden shadow-lg">
+            <img 
+              src="/uploads/news/skola-hokeja-2026.jpg" 
+              alt="Škola hokeja 2026" 
+              class="w-full h-80 object-cover"
+            />
           </div>
         </div>
 
