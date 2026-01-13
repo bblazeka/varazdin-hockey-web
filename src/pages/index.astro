@@ -4,6 +4,14 @@ import HeroSection from "../components/Sections/HeroSection.astro";
 import EventList from "../components/Sections/EventList.astro";
 import NextGame from "../components/Sections/NextGame.astro";
 import Button from "../components/UI/Button.astro";
+import { getCollection } from "astro:content";
+
+// Get latest news
+const allNews = await getCollection("news");
+const latestNews = allNews
+  .filter(news => !news.data.draft)
+  .sort((a, b) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf())
+  .slice(0, 3);
 
 // Sponsors list
 const sponsors = [
@@ -31,6 +39,76 @@ const sponsors = [
   <EventList />
 
   {/* <NextGame /> */}
+
+  <!-- Past Events Section -->
+  <section class="py-16 bg-white">
+    <div class="container">
+      <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">Prošli događaji</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <!-- Ledeni Pak 2026 -->
+        <a href="/events/ledeni-pak-2026" class="group block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow">
+          <div class="aspect-video bg-gray-200 overflow-hidden">
+            <img
+              src="/uploads/events/ledeni-pak-2026.jpeg"
+              alt="Ledeni Pak 2026"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2 group-hover:text-primary-600 transition-colors">Ledeni Pak 2026</h3>
+            <p class="text-gray-600 mb-3">11. siječnja 2026</p>
+            <p class="text-gray-700">IHK Varaždin osvojio 2. mjesto! 🥈</p>
+          </div>
+        </a>
+
+        <!-- Ptuj Winter Classic 2026 -->
+        <a href="/events/turnir-u-ptuju-2026" class="group block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow">
+          <div class="aspect-video bg-gray-200 overflow-hidden">
+            <img
+              src="/uploads/events/ptuj-winter-classic-2026.jpeg"
+              alt="Ptuj Winter Classic 2026"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2 group-hover:text-primary-600 transition-colors">Ptuj Winter Classic 2026</h3>
+            <p class="text-gray-600 mb-3">10. siječnja 2026</p>
+            <p class="text-gray-700">IHK Varaždin osvojio 4. mjesto! 🏒</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- News Section -->
+  <section class="py-16 bg-gray-50">
+    <div class="container">
+      <div class="flex justify-between items-center mb-8">
+        <h2 class="text-3xl md:text-4xl font-bold">Vijesti</h2>
+        <Button href="/news" variant="outline">Sve vijesti</Button>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {latestNews.map((news) => (
+          <a href={`/news/${news.slug}`} class="group block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow">
+            <div class="aspect-video bg-gray-200 overflow-hidden">
+              <img
+                src={news.data.image.url}
+                alt={news.data.image.alt}
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2 group-hover:text-primary-600 transition-colors">{news.data.title}</h3>
+              <p class="text-gray-600 mb-3">
+                {new Date(news.data.pubDate).toLocaleDateString('hr-HR', { year: 'numeric', month: 'long', day: 'numeric' })}
+              </p>
+              <p class="text-gray-700">{news.data.description}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
 
   <!-- About Section -->
   <section class="py-16 bg-gray-50">

@@ -11,7 +11,20 @@ registrationRequired: false
 draft: false
 ---
 
-Nova godina, novi turnir “Ledeni pak” (navodno jubilarni 10.!) 👀
-Vidimo se 11.1. u Varaždinu! 🏒
+## LEDENI PAK 2026 🏒
 
-Prijave moguće na +385989837824 (Dražen) ili +385918872820 (Viktor)
+Hladna siječanjska večer, vruća hokejaška atmosfera i još jedan turnir "Ledeni pak" je iza nas!
+
+### Rezultati:
+
+🥇 IHK Dinamo  
+🥈 IHK Varaždin  
+🥉 IHK Legionarji, Ptuj
+
+**MVP** - Medarda Pack (MotherPuckers & Janje)
+
+Hvala svim sponzorima, partnerima i prijateljima Kluba - Grad Varaždin, Zajednica sportskih udruga Varaždin, Ice Wonderland, Pan, Glaž, Marlex, Tvornica Leda, Schwabos, Vina Behin, Caffe bar Gloria, Pokos, Sportska 5ica. 💪
+
+---
+
+_Više fotografija s turnira možete pronaći na našem Instagram profilu. Fotografije: Dino Varošanec_

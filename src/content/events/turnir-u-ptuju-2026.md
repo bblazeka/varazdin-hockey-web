@@ -11,4 +11,10 @@ registrationRequired: false
 draft: false
 ---
 
-Naši hokejaši gostuju na međunarodnom turniru u Ptuju. Više informacija možete naći na https://www.facebook.com/hokejlegionarji
+## Ptuj Winter Classic 2026 🏒
+
+Ekipa IHK Varaždin je nastupila na međunarodnom Ptuj Winter Classic turniru gdje smo osvojili odlično **4. mjesto**. Bilo je super, atmosfera je bila fantastična, a natjecanje na visokoj razini! Turnir se održavao na Klizalištu u Ptuju, koje je unatoč nepovoljnih vremenskim uvjetima prethodnih dana bilo spremno.
+
+Zahvaljujemo i pohvaljujemo organizatore na izvrsnoj organizaciji turnira. Veselimo se turniru iduće godine!
+
+Više informacija možete naći na https://www.facebook.com/hokejlegionarji
