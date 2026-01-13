@@ -23,6 +23,11 @@ Hladna siječanjska večer, vruća hokejaška atmosfera i još jedan turnir "Led
 
 **MVP** - Medarda Pack (MotherPuckers & Janje)
 
+IHK Varaždin je nastupio s dvije ekipe:
+
+- **Crvena ekipa**: Stilinović, Šanjek, V. Ožeg, Kostrić, Strelec, Prpić
+- **Bijela ekipa**: Dilber, Savić, Haslinger, Nikšić, Zorman, Nevžala
+
 Hvala svim sponzorima, partnerima i prijateljima Kluba - Grad Varaždin, Zajednica sportskih udruga Varaždin, Ice Wonderland, Pan, Glaž, Marlex, Tvornica Leda, Schwabos, Vina Behin, Caffe bar Gloria, Pokos, Sportska 5ica. 💪
 
 ---

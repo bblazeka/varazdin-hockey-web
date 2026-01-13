@@ -15,6 +15,8 @@ draft: false
 
 Ekipa IHK Varaždin je nastupila na međunarodnom Ptuj Winter Classic turniru gdje smo osvojili odlično **4. mjesto**. Bilo je super, atmosfera je bila fantastična, a natjecanje na visokoj razini! Turnir se održavao na Klizalištu u Ptuju, koje je unatoč nepovoljnih vremenskim uvjetima prethodnih dana bilo spremno.
 
+Za Varaždin su igrali: Zorman, Šimunović, Dilber, Haslinger, Stilinović, Nevžala, Turk, V. Ožeg te Roki kao vođa ekipe.
+
 Zahvaljujemo i pohvaljujemo organizatore na izvrsnoj organizaciji turnira. Veselimo se turniru iduće godine!
 
 Više informacija možete naći na https://www.facebook.com/hokejlegionarji
